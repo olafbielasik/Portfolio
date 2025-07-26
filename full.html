@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Olaf Bielasik - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="wrapper">
+
+    
+    <div class="profile-container">
+      <div class="profile-glow"></div>
+      <div class="profile">
+        <div class="profile-image-wrapper">
+          <div class="profile-image-glow"></div>
+          <img src="images/me.jpg" alt="Profile Photo" />
+        </div>
+        <div class="profile-text">
+          <h1><span class="title-line-2">Olaf Bielasik</span></h1>
+          <h2 class="subtitle">
+            <span class="subtitle-line-1">Software Developer</span>
+            <span class="subtitle-line-2">& Designer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="tesseract-section">
+      <canvas id="tesseract-canvas"></canvas>
+    </div>
+
+   
+    <nav class="main-nav">
+      <ul>
+        
+        <li class="experience-block">
+          <div class="section-header">
+            <h2 class="typing-title" data-text="Experience">Experience</h2>
+            <div class="section-underline"></div>
+          </div>
+          <div class="experience-entry">
+            <p><strong>Software Developer</strong></p>
+            <div class="job-date">01/2025 - Present</div>
+            <p class="technologies">React.js, JavaScript, TypeScript, HTML, CSS</p>
+            <p class="description-line">– Building custom websites for small businesses and personal brands</p>
+            <p class="description-line">– Working with clients to define project scope, and deliver production-ready solutions</p>
+            <p class="description-line">– Focus on clean, maintainable code and user-centric design</p>
+          </div>
+          <div class="experience-entry">
+            <p><strong>Software Engineer at BasedCode (Startup Project)</strong></p>
+            <div class="job-date">08/2023 – 12/2024</div>
+            <p class="technologies">React.js, Next.js, JavaScript, Three.js, Vite, TypeScript, HTML, CSS, Git, REST API</p>
+            <p class="description-line">– Designed and developed a fully responsive company website from scratch</p>
+            <p class="description-line">– Implemented reusable components and optimized performance</p>
+            <p class="description-line">– Set up project architecture for scalability</p>
+          </div>
+        </li>
+
+        
+        <li>
+          <div class="section-header">
+            <h2 class="typing-title" data-text="Projects">Projects</h2>
+            <div class="section-underline"></div>
+          </div>
+          
+          <div class="project-grid">
+            <div class="project-card">
+              <h3 class="project-title">WingFlowLES</h3>
+              <p class="project-tech">Python, NumPy, SciPy, Numba, Matplotlib</p>
+              <p class="project-desc">Python-based simulation of airflow using LES method</p>
+              <img class="project-thumbnail" src="images/wing.gif" alt="WingFlowLES Preview" />
+              <a class="project-link" href="https://github.com/olafbielasik/WingFlowLES" target="_blank">View Details</a>
+            </div>
+            <div class="project-card">
+              <h3 class="project-title">StarlinkTracker</h3>
+              <p class="project-tech">TLE Data, Python, Three.js, Visualization</p>
+              <p class="project-desc">Starlink satellite positions based on real-time TLE data</p>
+              <img class="project-thumbnail" src="images/starlink.gif" alt="StarlinkTracker Preview" />
+              <a class="project-link" href="https://github.com/olafbielasik/StarlinkTracker" target="_blank">View Details</a>
+            </div>
+            <div class="project-card">
+              <h3 class="project-title">UAV Parts<br>web store</h3>
+              <p class="project-tech">HTML, CSS</p>
+              <p class="project-desc">Modern, single-page website template for a drone parts store</p>
+              <img class="project-thumbnail" src="images/sharks.gif" alt="UAV Parts Preview" />
+              <a class="project-link" href="https://github.com/olafbielasik/UAVSharks" target="_blank">View Details</a>
+            </div>
+          </div>
+        </li>
+
+        
+        <li>
+          <div class="section-header">
+            <h2 class="typing-title" data-text="Education">Education</h2>
+            <div class="section-underline"></div>
+          </div>
+          <div class="experience-entry">
+            <p><strong>Poznan University of Technology (PUT)</strong></p>
+            <div class="job-date">2020 - 2025</div>
+            <p class="MSc">B.Sc. & M.Sc. in Aerospace Engineering, Graduated with Honors</p>
+            <p class="description-line">– Used Python throughout multiple academic projects, including simulations and data analysis</p>
+            <p class="description-line">– Developed a strong foundation in CFD, numerical methods and HPC</p>
+            <p class="description-line">– Worked on projects using HTML, CSS, Three.js and Vite, as well as AI/ML related projects with Flask, pandas, PyTorch, and MNIST</p>
+          </div>
+          
+          
+          <div class="project-grid">
+            <div class="project-card">
+              <h3 class="project-title">Gravity Rouge</h3>
+              <p class="project-tech">C#</p>
+              <p class="project-desc">A 2D space game developed in Unity, in which you move among asteroids in a weightless state, using a jetpack and a rope to survive</p>
+              <img class="project-thumbnail" src="images/gravity.gif" alt="GravityRouge Preview" />
+              <a class="project-link" href="https://github.com/olafbielasik/GravityRouge" target="_blank">View Details</a>
+            </div>
+            <div class="project-card">
+              <h3 class="project-title">Active Satellites Tracker</h3>
+              <p class="project-tech">TLE Data, Python, PyGame, matplotlib</p>
+              <p class="project-desc">Simple visualization of satellite's positions based on real-time data</p>
+              <img class="project-thumbnail" src="images/satelites.jpg" alt="SatelitesTracker Preview" />
+              <a class="project-link" href="https://github.com/olafbielasik/ActiveSatellitesTracker" target="_blank">View Details</a>
+            </div>
+            <div class="project-card">
+              <h3 class="project-title">Digit Recognizer</h3>
+              <p class="project-tech">PyTorch, Flask</p>
+              <p class="project-desc">Trains an MNIST digit recognizer and serves it as a web app with a canvas for real-time predictions.</p>
+              <img class="project-thumbnail" src="images/recognizer.png" alt="Recognizer" />
+              <a class="project-link" href="https://github.com/olafbielasik/HandwrittenDigitRecognizer" target="_blank">View Details</a>
+            </div>
+          </div>
+          
+          <div class="experience-entry">
+            <p><strong>Master’s Thesis</strong></p>
+            <p class="technologies">Python, NumPy, SciPy, Numba, Matplotlib, FFmpeg, Visualization</p>
+            <p class="description-line">– Implemented airflow simulation using Python and open-source tools</p>
+            <p class="description-line">– Focused on turbulence modeling, data visualization, and performance optimization</p>
+            <p class="description-line">– Helped secure an honors degree upon graduation</p>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+        
+    <footer class="footer">
+      © 2025 Olaf Bielasik
+    </footer>
+
+    
+    <div class="mac-dock">
+      <div class="dock-icon-wrapper"><a href="#"><img src="images/linkedin.png" alt="LinkedIn" /></a></div>
+      <div class="dock-icon-wrapper"><a href="#"><img src="images/github.png" alt="GitHub" /></a></div>
+      <div class="dock-icon-wrapper"><a href="#"><img src="images/behance.png" alt="Behance" /></a></div>
+      <span class="dock-separator"></span>
+      <div class="dock-icon-wrapper"><a href="#"><img src="images/mail.png" alt="Mail" /></a></div>
+    </div>
+  </div>
+
+  
+  <script>
+  
+let scene, camera, renderer, container, lines;
+let angle4D = 0;
+let speed4D = 0.005, speed3Dx = 0.005, speed3Dy = 0.002, d = 3;
+
+let scrollFactor = 1;
+let sprites = [];
+
+function initTesseract() {
+  const canvas = document.getElementById('tesseract-canvas');
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+  camera.position.z = 5;
+
+  container = new THREE.Group();
+  container.scale.set(0.7, 0.7, 0.7);
+  scene.add(container);
+
+  const pts = [];
+  [-1, 1].forEach(x =>
+    [-1, 1].forEach(y =>
+      [-1, 1].forEach(z =>
+        [-1, 1].forEach(w =>
+          pts.push(new THREE.Vector4(x, y, z, w))
+        ))));
+
+  const edges = [];
+  for (let i = 0; i < pts.length; i++) {
+    for (let j = i + 1; j < pts.length; j++) {
+      let diff = 0;
+      ['x', 'y', 'z', 'w'].forEach(c => {
+        if (pts[i][c] !== pts[j][c]) diff++;
+      });
+      if (diff === 1) edges.push([i, j]);
+    }
+  }
+
+  const pos = new Float32Array(edges.length * 2 * 3);
+  const colors = new Float32Array(edges.length * 2 * 3);
+  const geom = new THREE.BufferGeometry();
+  geom.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  geom.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+  lines = new THREE.LineSegments(geom, new THREE.LineBasicMaterial({
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.9
+  }));
+  container.add(lines);
+
+  initTesseract.pts = pts;
+  initTesseract.edges = edges;
+  initTesseract.pos = pos;
+  initTesseract.colors = colors;
+
+  // === LOGA TECHNOLOGII ===
+  const techLogos = [
+  'images/react.png',
+  'images/python.png',
+  'images/js.png',
+  'images/html.webp',
+  'images/css.png',
+  'images/type.png',
+  'images/sharp.png',
+  'images/threee.png'
+  ];
+
+  const radius = 3.2;
+
+  techLogos.forEach((src, i) => {
+    const tex = new THREE.TextureLoader().load(src, () => renderer.render(scene, camera));
+    tex.minFilter = THREE.LinearFilter;
+    tex.generateMipmaps = false;
+
+    const spriteMat = new THREE.SpriteMaterial({
+      map: tex,
+      transparent: true,
+      opacity: 0.85,
+      alphaTest: 0.05
+    });
+
+    const sprite = new THREE.Sprite(spriteMat);
+    const angle = (i / techLogos.length) * Math.PI * 2;
+
+sprite.position.set(
+  Math.cos(angle) * radius,
+  Math.sin(angle) * radius,
+  0.1 // stała, bliska wartość Z
+);
+
+    sprite.scale.set(0.5, 0.5, 0.5);
+
+    scene.add(sprite);
+    sprites.push({ sprite, angle });
+  });
+
+  animateTesseract();
+}
+
+// === INTERAKCJA ===
+
+let lastMouseX = 0;
+let lastMouseY = 0;
+
+document.addEventListener('wheel', (e) => {
+  scrollFactor += e.deltaY * -0.001;
+  scrollFactor = Math.max(0.2, Math.min(1.5, scrollFactor)); // ograniczenie scrolla
+});
+
+function rotate4D(v, a) {
+  const x = v.x * Math.cos(a) - v.y * Math.sin(a);
+  const y = v.x * Math.sin(a) + v.y * Math.cos(a);
+  const z = v.z * Math.cos(a) - v.w * Math.sin(a);
+  const w = v.z * Math.sin(a) + v.w * Math.cos(a);
+  return new THREE.Vector4(x, y, z, w);
+}
+
+function animateTesseract() {
+  requestAnimationFrame(animateTesseract);
+  angle4D += speed4D * scrollFactor;
+  const time = performance.now() * 0.001;
+
+  const projected = initTesseract.pts.map(v => {
+    const rv = rotate4D(v, angle4D);
+    const f = d / (d - rv.w);
+    return new THREE.Vector3(rv.x * f, rv.y * f, rv.z * f);
+  });
+
+  for (let i = 0; i < initTesseract.edges.length; i++) {
+    const edge = initTesseract.edges[i];
+    const p1 = projected[edge[0]];
+    const p2 = projected[edge[1]];
+    initTesseract.pos.set([p1.x, p1.y, p1.z, p2.x, p2.y, p2.z], i * 6);
+
+    const phase = time + i * 0.3;
+    const minBrightness = 0.2;
+    const r = ((Math.sin(phase * 9) + 1) / 2) * (1 - minBrightness) + minBrightness;
+    const g = ((Math.sin(phase * 9 + 1) + 1) / 2) * (1 - minBrightness) + minBrightness;
+    const b = ((Math.sin(phase * 9 + 2) + 1) / 2) * (1 - minBrightness) + minBrightness;
+
+    for (let j = 0; j < 2; j++) {
+      const idx = (i * 2 + j) * 3;
+      initTesseract.colors[idx] = r;
+      initTesseract.colors[idx + 1] = g;
+      initTesseract.colors[idx + 2] = b;
+    }
+  }
+
+  // === ANIMACJA ORBITUJĄCYCH LOGO ===
+const orbitSpeedBase = 0.0015;
+const orbitSpeed = Math.max(0.0005, orbitSpeedBase * scrollFactor); // minimalna prędkość obrotu logotypów
+
+sprites.forEach((item) => {
+  item.angle += orbitSpeed;
+  const radius = 3.2;
+  const x = Math.cos(item.angle) * radius;
+  const y = Math.sin(item.angle) * radius;
+  item.sprite.position.set(x, y, item.sprite.position.z);
+});
+
+
+  lines.geometry.attributes.position.needsUpdate = true;
+  lines.geometry.attributes.color.needsUpdate = true;
+  container.rotation.x += speed3Dx;
+  container.rotation.y += speed3Dy;
+  renderer.render(scene, camera);
+}
+
+document.addEventListener('DOMContentLoaded', initTesseract);
+</script>
+
+ 
+  <script>
+    const dock = document.querySelector('.mac-dock');
+    const items = Array.from(dock.querySelectorAll('.dock-icon-wrapper'));
+
+    items.forEach((item, i) => {
+      item.addEventListener('mouseenter', () => {
+        items.forEach(el => el.classList.remove('hover', 'neighbor-left', 'neighbor-right'));
+        item.classList.add('hover');
+        if (items[i - 1]) items[i - 1].classList.add('neighbor-left');
+        if (items[i + 1]) items[i + 1].classList.add('neighbor-right');
+      });
+
+      item.addEventListener('mouseleave', () => {
+        items.forEach(el => el.classList.remove('hover', 'neighbor-left', 'neighbor-right'));
+      });
+    });
+
+    dock.addEventListener('mouseleave', () => {
+      items.forEach(el => el.classList.remove('hover', 'neighbor-left', 'neighbor-right'));
+    });
+  </script>
+
+  
+  <script>
+    document.querySelectorAll('.typing-title').forEach(el => {
+      const originalText = el.dataset.text;
+      const section = el.closest('.section-header');
+      let i = originalText.length;
+      const speed = 75;
+
+      function erase() {
+        if (i >= 0) {
+          el.childNodes[0].nodeValue = originalText.substring(0, i--);
+          insertCursor();
+          setTimeout(erase, speed);
+        } else {
+          write();
+        }
+      }
+
+      function write() {
+        if (i <= originalText.length) {
+          el.childNodes[0].nodeValue = originalText.substring(0, i++);
+          insertCursor();
+          setTimeout(write, speed);
+        } else {
+          removeCursor();
+          section.classList.remove("typing");
+        }
+      }
+
+      function insertCursor() {
+        removeCursor();
+        const cursor = document.createElement("span");
+        cursor.classList.add("cursor");
+        el.appendChild(cursor);
+      }
+
+      function removeCursor() {
+        const existing = el.querySelector(".cursor");
+        if (existing) existing.remove();
+      }
+
+      el.addEventListener('mouseenter', () => {
+        if (section.classList.contains("typing")) return;
+        section.classList.add("typing");
+        i = originalText.length;
+        erase();
+      });
+    });
+  </script>
+  <script>
+  function toggleOverlay(card) {
+    const isActive = card.classList.contains('active');
+    document.querySelectorAll('.project-card.active').forEach(c => c.classList.remove('active'));
+    if (!isActive) {
+      card.classList.add('active');
+    }
+  }
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Używamy zmiennych lokalnych (const/let), aby uniknąć konfliktów z innym skryptem Three.js
+    const bgScene = new THREE.Scene();
+    const bgCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const bgRenderer = new THREE.WebGLRenderer({
+      canvas: document.querySelector('#bg-canvas'),
+      alpha: true 
+    });
+
+    bgRenderer.setPixelRatio(window.devicePixelRatio);
+    bgRenderer.setSize(window.innerWidth, window.innerHeight);
+    bgCamera.position.setZ(30);
+
+    // Tworzenie cząsteczek
+    const particleCount = 7000;
+    const positions = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount * 3; i++) {
+      positions[i] = (Math.random() - 0.5) * 120;
+    }
+
+    const particlesGeometry = new THREE.BufferGeometry();
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    // --- ZMIANY TUTAJ ---
+    const particlesMaterial = new THREE.PointsMaterial({
+      color: 0xaaaaaa,                 // 1. Zmiana koloru na szary
+      size: 0.08,
+      transparent: true,
+      blending: THREE.NormalBlending,  // 2. Zmiana trybu mieszania
+      opacity: 0.6                     // 3. Zmniejszenie przezroczystości
+    });
+
+    const starField = new THREE.Points(particlesGeometry, particlesMaterial);
+    bgScene.add(starField);
+
+    // Interakcja z myszą
+    let mouseX = 0;
+    let mouseY = 0;
+    document.addEventListener('mousemove', (event) => {
+      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    // Pętla animacji
+    const clock = new THREE.Clock();
+
+    const animateBackground = () => {
+      requestAnimationFrame(animateBackground);
+      const elapsedTime = clock.getElapsedTime();
+
+      starField.rotation.y = elapsedTime * 0.03;
+      starField.rotation.x = elapsedTime * 0.03;
+      
+      bgCamera.position.x += (mouseX * 5 - bgCamera.position.x) * 0.02;
+      bgCamera.position.y += (mouseY * 5 - bgCamera.position.y) * 0.02;
+      bgCamera.lookAt(bgScene.position);
+
+      bgRenderer.render(bgScene, bgCamera);
+    };
+
+    // Obsługa zmiany rozmiaru okna
+    window.addEventListener('resize', () => {
+      bgRenderer.setSize(window.innerWidth, window.innerHeight);
+      bgCamera.aspect = window.innerWidth / window.innerHeight;
+      bgCamera.updateProjectionMatrix();
+    });
+
+    animateBackground();
+  });
+</script>
+
+</body>
+</html>

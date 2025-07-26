@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Olaf Bielasik – Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-basic.css" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    #transition-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9998;
+      pointer-events: none;
+      display: none;
+    }
+    
+    #text-transition-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9999;
+      pointer-events: none;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Figtree', sans-serif;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    #text-transition-overlay span {
+      display: inline-block;
+      font-size: 1.4em;
+      padding: 0 0.3em;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="wrapper">
+    
+    <div class="profile-container">
+      <div class="profile">
+        <img src="images/me.jpg" alt="Profile Photo" />
+        <div class="profile-text">
+          <h1>Olaf Bielasik</h1>
+          <h2>Software Developer & Designer</h2>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div id="tech-grid">
+      <img src="images/react.png" alt="React" />
+      <img src="images/python.png" alt="Python" />
+      <img src="images/js.png" alt="JavaScript" />
+      <img src="images/type.png" alt="TypeScript" />
+      <img src="images/html.webp" alt="HTML" />
+      <img src="images/css.png" alt="CSS" />
+      <img src="images/three.png" alt="three" />
+      <img src="images/sharp.png" alt="sharp" />
+    </div>
+
+    
+    <div class="container">
+      <button class="button" id="start-transition-btn">SPACE MODE</button>
+    </div>
+
+    
+    <div class="basic-experience">
+      <h2>Experience</h2>
+      <div class="experience-entry">
+        <p class="position-developer">Software Developer</p>
+        <div class="job-date">01/2025 – Present</div>
+        <p class="technologies">React.js, JavaScript, TypeScript, HTML, CSS</p>
+        <p class="description-line">– Building custom websites for small businesses and personal brands</p>
+        <p class="description-line">– Collaborating with clients to define scope and deliver production-ready solutions</p>
+        <p class="description-line">– Focused on clean, maintainable code and user-centric design</p>
+      </div>
+      <div class="experience-entry">
+        <p class="position-engineer">Software Engineer at BasedCode (Startup Project)</p>
+        <div class="job-date">08/2023 – 12/2024</div>
+        <p class="technologies">React.js, Next.js, JavaScript, Three.js, Vite, TypeScript, HTML, CSS, Git, REST API</p>
+        <p class="description-line">– Designed and developed a fully responsive company website from scratch</p>
+        <p class="description-line">– Created reusable components and optimized performance</p>
+        <p class="description-line">– Architected scalable front-end structure</p>
+      </div>
+    </div>
+
+    
+    <div class="section-container">
+      <h2>Projects</h2>
+      <div class="project-cards">
+        <div class="project-card">
+          <h3 class="project-title">WingFlowLES</h3>
+          <p class="project-tech">Python, NumPy, SciPy, Numba, Matplotlib</p>
+          <img class="project-thumbnail" src="images/wing.gif" alt="WingFlowLES Preview" />
+          <p class="project-desc">Python-based simulation of airflow using LES method.</p>
+          <a class="project-link" href="https://github.com/olafbielasik/WingFlowLES" target="_blank">View Details</a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">StarlinkTracker</h3>
+          <p class="project-tech">TLE Data, Python, Visualisation,Three.js</p>
+          <img class="project-thumbnail" src="images/starlink.gif" alt="StarlinkTracker Preview" />
+          <p class="project-desc">Starlink satellite positions based on real-time TLE data.</p>
+          <a class="project-link" href="https://github.com/olafbielasik/StarlinkTracker" target="_blank">View Details</a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">UAV Parts web store</h3>
+          <p class="project-tech">HTML, CSS</p>
+          <img class="project-thumbnail" src="images/sharks.gif" alt="UAV Parts Preview" />
+          <p class="project-desc">Modern, single-page website template for a drone parts store.</p>
+          <a class="project-link" href="https://github.com/olafbielasik/UAVSharks" target="_blank">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="section-container basic-experience">
+        <h2>Education</h2>
+        <div class="experience-entry">
+            <p><strong>Poznan University of Technology (PUT)</strong></p>
+            <div class="job-date">2020 - 2025</div>
+            <p><strong>B.Sc. & M.Sc. in Aerospace Engineering, Graduated with Honors</strong></p>
+            <p class="description-line">– Used Python throughout multiple academic projects, including simulations and data analysis.</p>
+            <p class="description-line">– Developed a strong foundation in CFD, numerical methods and HPC.</p>
+            <p class="description-line">– Worked on projects using HTML, CSS, Three.js and Vite, as well as AI/ML related projects with Flask, pandas, PyTorch, and MNIST.</p>
+        </div>
+        <div class="project-cards">
+            <div class="project-card">
+              <h3 class="project-title">Gravity Rouge</h3>
+              <p class="project-tech">C#</p>
+              <img class="project-thumbnail" src="images/gravity.gif" alt="GravityRouge Preview" />
+              <p class="project-desc">A 2D physics-based game made in C#.</p>
+              <a class="project-link" href="https://github.com/olafbielasik/GravityRouge" target="_blank">View Details</a>
+            </div>
+            <div class="project-card">
+              <h3 class="project-title">Active Satellites Tracker</h3>
+              <p class="project-tech">TLE Data, Python, PyGame, matplotlib</p>
+              <img class="project-thumbnail" src="images/satelites.jpg" alt="SatelitesTracker Preview" />
+              <p class="project-desc">Simple visualization of satellite's positions based on real-time data.</p>
+              <a class="project-link" href="https://github.com/olafbielasik/ActiveSatellitesTracker" target="_blank">View Details</a>
+            </div>
+            <div class="project-card">
+              <h3 class="project-title">Digit Recognizer</h3>
+              <p class="project-tech">PyTorch, Flask</p>
+              <img class="project-thumbnail" src="images/recognizer.png" alt="Recognizer" />
+              <p class="project-desc">Trains an MNIST digit recognizer and serves it as a web app with a canvas for real-time predictions.</p>
+              <a class="project-link" href="https://github.com/olafbielasik/HandwrittenDigitRecognizer" target="_blank">View Details</a>
+            </div>
+        </div>
+        <div class="experience-entry masters-thesis-entry">
+            <p><strong>Master’s Thesis</strong></p>
+            <p class="technologies">Python, NumPy, SciPy, Numba, Matplotlib, FFmpeg, Visualization</p>
+            <p class="description-line">– Implemented airflow simulation using Python and open-source tools.</p>
+            <p class="description-line">– Focused on turbulence modeling, data visualization, and performance optimization.</p>
+            <p class="description-line">– Helped secure an honors degree upon graduation.</p>
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+      © 2025 Olaf Bielasik
+    </footer>
+
+    
+    <div class="mac-dock">
+      <div class="dock-icon-wrapper"><a href="#"><img src="images/linkedin.png" alt="LinkedIn" /></a></div>
+      <div class="dock-icon-wrapper"><a href="#"><img src="images/github.png" alt="GitHub" /></a></div>
+      <div class="dock-icon-wrapper"><a href="#"><img src="images/behance.png" alt="Behance" /></a></div>
+      <span class="dock-separator"></span>
+      <div class="dock-icon-wrapper"><a href="#"><img src="images/mail.png" alt="Mail" /></a></div>
+    </div>
+  </div>
+
+  <canvas id="transition-canvas"></canvas>
+  <div id="text-transition-overlay">
+    <span id="text-space">SPACE</span>
+    <span id="text-mode">MODE</span>
+  </div>
+  <iframe id="page-loader" src="full.html" style="position: absolute; top: -9999px; left: -9999px; width: 100vw; height: 100vh;"></iframe>
+
+  
+  <script>
+    const dock = document.querySelector('.mac-dock');
+    const items = Array.from(dock.querySelectorAll('.dock-icon-wrapper'));
+    items.forEach((item, i) => {
+      item.addEventListener('mouseenter', () => {
+        items.forEach(el => el.classList.remove('hover', 'neighbor-left', 'neighbor-right'));
+        item.classList.add('hover');
+        if (items[i - 1]) items[i - 1].classList.add('neighbor-left');
+        if (items[i + 1]) items[i + 1].classList.add('neighbor-right');
+      });
+      item.addEventListener('mouseleave', () => items.forEach(el => el.classList.remove('hover', 'neighbor-left', 'neighbor-right')));
+    });
+    dock.addEventListener('mouseleave', () => items.forEach(el => el.classList.remove('hover', 'neighbor-left', 'neighbor-right')));
+  </script>
+
+  
+  <script>
+    window.addEventListener('load', () => {
+      const transitionButton = document.getElementById('start-transition-btn');
+      const pageLoaderIframe = document.getElementById('page-loader');
+      const transitionCanvas = document.getElementById('transition-canvas');
+      const textOverlay = document.getElementById('text-transition-overlay');
+      const textSpace = document.getElementById('text-space');
+      const textMode = document.getElementById('text-mode');
+      
+      let scene, camera, renderer, material, plane;
+
+      // ZMODYFIKOWANY SHADER: Umiarkowany efekt "splash"
+      const vertexShader = `
+        uniform float u_time;
+        uniform float u_power;
+        varying vec2 v_uv;
+        void main() {
+          v_uv = uv;
+          vec3 pos = position;
+          float dist = distance(uv, vec2(0.5));
+          float wave1 = sin(dist * 25.0 - u_time * 8.0) * u_power * 0.08;
+          float wave2 = sin(dist * 20.0 - u_time * 5.0) * u_power * 0.12;
+          pos.z += (wave1 + wave2);
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+        }`;
+      const fragmentShader = `
+        uniform sampler2D u_texture;
+        varying vec2 v_uv;
+        void main() {
+          gl_FragColor = texture2D(u_texture, v_uv);
+        }`;
+
+      function initThree(texture) {
+        transitionCanvas.style.display = 'block';
+        scene = new THREE.Scene();
+        renderer = new THREE.WebGLRenderer({ canvas: transitionCanvas, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10);
+        camera.position.z = 1;
+        const fovInRadians = (camera.fov * Math.PI) / 180;
+        const visibleHeight = 2 * Math.tan(fovInRadians / 2) * camera.position.z;
+        const visibleWidth = visibleHeight * camera.aspect;
+        material = new THREE.ShaderMaterial({
+          uniforms: { u_time: { value: 0.0 }, u_power: { value: 0.0 }, u_texture: { value: texture } },
+          vertexShader, fragmentShader, transparent: true
+        });
+        const geometry = new THREE.PlaneGeometry(visibleWidth, visibleHeight, 128, 128);
+        plane = new THREE.Mesh(geometry, material);
+        scene.add(plane);
+      }
+      
+      function animate() {
+        if (!material || !plane) return;
+
+        const animationDuration = 3.8; // Wolniejsza, płynniejsza animacja
+        const elapsedTime = material.uniforms.u_time.value;
+        material.uniforms.u_time.value += 0.02;
+        
+        material.uniforms.u_power.value = (elapsedTime < 1.0) ? elapsedTime : 1.0 - Math.min((elapsedTime - 1.0) * 0.5, 1.0);
+        
+        // Skalowanie płótna jest teraz częścią głównej animacji postępu
+        const progress = Math.min(elapsedTime / animationDuration, 1.0);
+        const easeOutQuad = t => t * (2 - t);
+        const easedProgress = easeOutQuad(progress);
+
+        const scale = easedProgress;
+        plane.scale.set(scale, scale, 1);
+
+        const maxBlur = 40; // Zmniejszony maksymalny blur
+        const currentBlur = maxBlur * progress * (1 - progress); // Blur pojawia się i znika
+        transitionCanvas.style.filter = `blur(${currentBlur}px)`;
+        
+        const startFontSize = 1.4;
+        const endFontSize = 250;
+        const currentFontSize = startFontSize + (endFontSize - startFontSize) * easedProgress;
+        
+        const maxTranslate = window.innerWidth / 1.8;
+        const currentTranslate = maxTranslate * easedProgress;
+
+        if (textSpace && textMode) {
+          textSpace.style.fontSize = `${currentFontSize}em`;
+          textMode.style.fontSize = `${currentFontSize}em`;
+          textSpace.style.transform = `translateX(-${currentTranslate}px)`;
+          textMode.style.transform = `translateX(${currentTranslate}px)`;
+          textOverlay.style.opacity = 1.0 - Math.pow(progress, 3);
+        }
+
+        renderer.render(scene, camera);
+
+        if (elapsedTime < animationDuration) {
+          requestAnimationFrame(animate);
+        } else {
+          window.location.href = 'full.html';
+        }
+      }
+      
+      function performTransition() {
+          const iFrameDoc = pageLoaderIframe.contentWindow.document;
+          const gradientElements = iFrameDoc.querySelectorAll('.profile-text h1, .technologies, .project-tech, .MSc');
+          gradientElements.forEach(el => {
+              el.style.backgroundImage = 'none';
+              el.style.color = '#EEE';
+              el.style.webkitBackgroundClip = 'unset';
+              el.style.webkitTextFillColor = 'unset';
+          });
+          html2canvas(iFrameDoc.body, {
+              useCORS: true, allowTaint: true, backgroundColor: '#000',
+              width: window.innerWidth, height: window.innerHeight,
+              windowWidth: window.innerWidth, windowHeight: window.innerHeight,
+          }).then(canvas => {
+              const texture = new THREE.CanvasTexture(canvas);
+              texture.needsUpdate = true;
+              initThree(texture);
+              textOverlay.style.display = 'flex';
+              requestAnimationFrame(animate);
+          }).catch(err => {
+              console.error("html2canvas failed:", err);
+              window.location.href = 'full.html';
+          });
+      }
+
+      transitionButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        document.querySelector('.wrapper').style.transition = 'opacity 0.3s ease';
+        document.querySelector('.wrapper').style.opacity = '0';
+        document.querySelector('.wrapper').style.pointerEvents = 'none';
+
+        if (pageLoaderIframe.contentWindow && pageLoaderIframe.contentWindow.document.readyState === 'complete') {
+          performTransition();
+        } else {
+          pageLoaderIframe.addEventListener('load', performTransition, { once: true });
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (!renderer) return;
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      });
+    });
+  </script>
+
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 20;
+
+        const renderer = new THREE.WebGLRenderer({
+            canvas: document.querySelector('#bg-canvas'),
+            antialias: true,
+            alpha: true,
+        });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(5, 10, 7.5);
+        scene.add(directionalLight);
+
+        const blobs = [];
+        const blobSettings = [
+            { scale: 8,  pos: new THREE.Vector3(-3, 0, -15), speed: 0.15 },
+            { scale: 10, pos: new THREE.Vector3(5, -5, -25), speed: 0.2 },
+            { scale: 9,  pos: new THREE.Vector3(0, 5, -20), speed: 0.1 },
+        ];
+        
+        const vertexShader = `
+            uniform float u_time;
+            uniform float u_displacement_scale;
+            varying float v_displacement;
+
+            vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+            vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+            vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+            float snoise(vec2 v) {
+                const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
+                vec2 i  = floor(v + dot(v, C.yy));
+                vec2 x0 = v - i + dot(i, C.xx);
+                vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+                vec4 x12 = x0.xyxy + C.xxzz;
+                x12.xy -= i1;
+                i = mod289(i);
+                vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
+                vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+                m = m*m;
+                m = m*m;
+                vec3 x = 2.0 * fract(p * C.www) - 1.0;
+                vec3 h = abs(x) - 0.5;
+                vec3 ox = floor(x + 0.5);
+                vec3 a0 = x - ox;
+                m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+                vec3 g;
+                g.x  = a0.x  * x0.x  + h.x  * x0.y;
+                g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+                return 130.0 * dot(m, g);
+            }
+
+            void main() {
+                vec3 pos = position;
+                float noise = snoise(pos.xy * 0.1 + u_time * 0.2) * u_displacement_scale;
+                pos += normal * noise;
+                v_displacement = noise;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+            }
+        `;
+
+        const fragmentShader = `
+            varying float v_displacement;
+            void main() {
+                float intensity = smoothstep(0.0, 1.0, abs(v_displacement));
+                gl_FragColor = vec4(vec3(1.0), intensity);
+            }
+        `;
+
+
+        blobSettings.forEach(settings => {
+            const material = new THREE.MeshStandardMaterial({
+                color: 0xffffff,
+                roughness: 0.8,
+                metalness: 0.1,
+            });
+
+            material.onBeforeCompile = (shader) => {
+                shader.uniforms.u_time = { value: 0 };
+                shader.uniforms.u_scroll = { value: 0 };
+                shader.uniforms.u_displacement_scale = { value: 1.0 };
+                
+                shader.vertexShader = 'uniform float u_time;\nuniform float u_scroll;\nuniform float u_displacement_scale;\n' + shader.vertexShader;
+                shader.vertexShader = shader.vertexShader.replace(
+                  '#include <begin_vertex>',
+                  `
+                    vec3 transformed = vec3(position);
+                    float displacement = 0.0;
+                    
+                    float time_val = u_time * ${settings.speed.toFixed(2)};
+                    float scroll_factor = 1.0 + u_scroll * 4.0;
+                    
+                    displacement += sin(transformed.x * 0.3 * scroll_factor + time_val) * 0.5;
+                    displacement += cos(transformed.y * 0.2 * scroll_factor - time_val) * 0.5;
+                    displacement *= sin(transformed.y * 0.5 * scroll_factor + time_val) * 0.8;
+                    
+                    transformed += normal * displacement * u_displacement_scale;
+                  `
+                );
+                material.userData.shader = shader;
+            };
+
+            const geometry = new THREE.SphereGeometry(1, 128, 128);
+            const blob = new THREE.Mesh(geometry, material);
+            blob.scale.set(settings.scale, settings.scale, settings.scale);
+            blob.position.copy(settings.pos);
+            blobs.push({ mesh: blob, initialZ: settings.pos.z });
+            scene.add(blob);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollValue = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            blobs.forEach(blob => {
+                if (blob.mesh.material.userData.shader) {
+                    blob.mesh.material.userData.shader.uniforms.u_scroll.value = scrollValue;
+                }
+                blob.mesh.position.z = blob.initialZ + scrollValue * 15.0;
+            });
+        });
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+
+            blobs.forEach(blob => {
+                if (blob.mesh.material.userData.shader) {
+                    blob.mesh.material.userData.shader.uniforms.u_time.value = elapsedTime;
+                }
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+    });
+  </script>
+</body>
+</html>
