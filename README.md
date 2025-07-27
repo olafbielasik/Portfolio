@@ -24,7 +24,7 @@ The site includes custom animations, a 4D tesseract rendered in real time with T
 
 ## Technologies Used
 
-- **Frontend**: HTML5, CSS3, JavaScript, TypeScript  
+- **Frontend**: HTML, CSS, JavaScript, TypeScript  
 - **Frameworks & Tools**: React (project showcase), Three.js, Vite  
 - **Design**: Figtree & Michroma fonts, custom gradients and glow effects
 
